@@ -12,6 +12,8 @@
 [Bootstrap](https://v3.bootcss.com/getting-started/)
 
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
+
+[Spring](https://docs.spring.io/spring-boot/docs/2.2.0.RC1/reference/htmlsingle/#boot-features-embedded-database-support)
 ## Tools
 [Git](https://git-scm.com/download_)
 
