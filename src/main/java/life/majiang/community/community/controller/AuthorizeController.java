@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
+<<<<<<< HEAD
+=======
+import javax.servlet.http.HttpServletRequest;
+>>>>>>> 6dea75ec7007642a3047cf6ab851c4951bad367b
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
@@ -35,6 +39,10 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
+<<<<<<< HEAD
+=======
+                           HttpServletRequest request,
+>>>>>>> 6dea75ec7007642a3047cf6ab851c4951bad367b
                            HttpServletResponse response) {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
