@@ -10,3 +10,7 @@ body{
     float: right;
     margin-bottom: 15px;
 }
+.text-lowercase{
+    font-size: 18px;
+    margin-left: 3px;
+}
