@@ -63,15 +63,15 @@
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Question title...">
+                    <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="Question title...">
                 </div>
                 <div class="form-group">
                     <label for="title">description</label>
-                    <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" th:value="${description}" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="title">Add tag:</label>
-                    <input type="text" class="form-control" id="tag" name="tag" placeholder="input tags separated by comma">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="input tags separated by comma">
                 </div>
 
 

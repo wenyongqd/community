@@ -37,6 +37,25 @@ public class PublishController {
             HttpServletRequest request,
             Model model
     ) {
+
+        model.addAttribute("title",title);
+        model.addAttribute("description",description);
+        model.addAttribute("tag",tag);
+
+        if(title == null || title == ""){
+            model.addAttribute("error", "please add title");
+            return "publish";
+        }
+        if(description == null || description == ""){
+            model.addAttribute("error", "please add description");
+            return "publish";
+        }
+        if(tag == null || tag == ""){
+            model.addAttribute("error", "please add tag");
+            return "publish";
+        }
+
+
         User user = null;
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
