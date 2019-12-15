@@ -12,6 +12,7 @@
 [Git](https://git-scm.com/download_)  
 [Visual Paradigm](https://www.visual-paradigm.com_)  
 [Flyway](https://flywaydb.org/getstarted/firststeps/maven) 
+[Lombok](https://www.projectlombok.org)
 
 ## Script
 ```create table USER
