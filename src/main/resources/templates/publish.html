@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="title">description</label>
-                    <textarea name="description" id="description" th:value="${description}" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" th:text="${description}" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="title">Add tag:</label>
@@ -82,7 +82,7 @@
         </div>
 
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>Issue initiation Guide</h3>
+            <h3>Issue Initiation Guide</h3>
             • Question Title: please describe your issue in simplified language, no more than 25 words. <br>
             • Problem supplement: supplement your problem content in detail, make sure the problem description is clear and intuitive, and provide some relevant information. <br>
             • Select Tags: select a live tag with multiple appropriate tags separated by commas, with each tag no more than 10 words. <br>
