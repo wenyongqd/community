@@ -12,7 +12,8 @@
 [Git](https://git-scm.com/download_)  
 [Visual Paradigm](https://www.visual-paradigm.com_)  
 [Flyway](https://flywaydb.org/getstarted/firststeps/maven) 
-[Lombok](https://www.projectlombok.org)
+[Lombok](https://www.projectlombok.org)  
+[thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 
 ## Script
 ```create table USER
