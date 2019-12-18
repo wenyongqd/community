@@ -1,6 +1,6 @@
 package life.majiang.community.community.interceptor;
 
-import jdk.internal.jline.internal.Nullable;
+//import jdk.internal.jline.internal.Nullable;
 import life.majiang.community.community.mapper.UserMapper;
 import life.majiang.community.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Service
-public class SessionInterception implements HandlerInterceptor {
+public class SessionInterceptor implements HandlerInterceptor {
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-
         Cookie[] cookies = request.getCookies();
         if(cookies != null && cookies.length != 0)
             for (Cookie cookie : cookies) {
@@ -35,15 +33,16 @@ public class SessionInterception implements HandlerInterceptor {
                 }
             }
         return true;
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
 
     }
 
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
 
     }
 }
