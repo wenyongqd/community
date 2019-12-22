@@ -17,15 +17,19 @@
 
 ## Script
 ```create table USER
-   (
-   	ID INTEGER default NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_448204EB_C390_4431_BF5E_6B432E131D37" auto_increment,
-   	ACCOUNT_ID VARCHAR(100),
-   	NAME VARCHAR(50),
-   	TOKEN CHAR(36),
-   	GMT_CREATE BIGINT,
-   	GMT_MODIFIED BIGINT,
-   	constraint USER_PK
-   		primary key (ID)
-   );
+(
+   ID INTEGER default NEXT VALUE FOR "PUBLIC"."SYSTEM_SEQUENCE_448204EB_C390_4431_BF5E_6B432E131D37" auto_increment,
+   ACCOUNT_ID VARCHAR(100),
+   NAME VARCHAR(50),
+   TOKEN CHAR(36),
+   GMT_CREATE BIGINT,
+   GMT_MODIFIED BIGINT,
+   constraint USER_PK
+   	primary key (ID)
+);
 
+```
+```bash
+mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
