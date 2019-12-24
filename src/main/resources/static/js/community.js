@@ -18,16 +18,13 @@ function post() {
                     var isAccepted = confirm(response.message);
                     if (isAccepted) {
                         window.open("https://github.com/login/oauth/authorize?client_id=710abdc11b7699c6273d&redirect_uri=http://localhost:8080/callback&scope=user&state=1")
+                        window.localStorage.setItem("closable", true);
                     }
                 }else  {
                     alert(response.message)
                 }
             }
-            console.log(response)
         },
         dataType: "json"
     });
-    console.log(questionId);
-    console.log(content);
-
 }
