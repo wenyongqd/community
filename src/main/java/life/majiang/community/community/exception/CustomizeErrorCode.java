@@ -7,7 +7,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     NO_LOGIN(2003, "please login and try again."),
     SYS_ERROR(2004, "server seems busy, take a rest."),
     TYPE_PARAM_WRONG(2005, "comment type is wrong."),
-    COMMENT_NOT_FOUND(2006, "comment doesn't exist.");
+    COMMENT_NOT_FOUND(2006, "comment doesn't exist."),
+    CONTENT_IS_EMPTY(2007,"Input cannot be empty.");
 
 
 
