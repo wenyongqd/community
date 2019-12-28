@@ -1,3 +1,4 @@
+
 package life.majiang.community.community.mapper;
 
 import java.util.List;
