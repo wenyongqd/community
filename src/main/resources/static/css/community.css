@@ -49,6 +49,10 @@ body{
 .question-wechat {
     width: 100%;
 }
+.publish-tag-tab {
+    display: none;
+    margin-top: 10px;
+}
 .community-menu {
     display: block;
     color: #999;
@@ -104,3 +108,4 @@ body{
 .menu .icon:hover {
     color: #499ef3;
 }
+

@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>post - CodeMaster Community</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="/css/community.css"/>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/community.js" type="application/javascript"></script>
 
 </head>
 <body>
@@ -22,18 +23,44 @@
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">title</label>
-                    <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="Question title..."
-                    autocomplete="off">
+                    <input type="text" class="form-control" id="title" th:value="${title}" name="title"
+                           placeholder="Question title..."
+                           autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="title">description</label>
-                    <textarea name="description" id="description" th:text="${description}" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" th:text="${description}" class="form-control"
+                              cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="title">Add tag:</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="input tags separated by comma"
-                    autocomplete="off">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                           placeholder="input tags separated by comma"
+                           autocomplete="off" onclick="showSelectTag()">
+                    <div id="select-tag" class="publish-tag-tab">
+
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                                      data-toggle="tab">Language</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">framework</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                            <span class="label label-info"><span class="glyphicon glyphicon-tag"
+                                                                 onclick="selectTag('Java')">Java</span></span>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                            <span class="label label-info"><span class="glyphicon glyphicon-tag"
+                                                                 onclick="selectTag('Spring')">Spring</span></span>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+
 
 
                 <span style="color: red" class="text-lowercase" th:text="${error}"></span>
@@ -45,8 +72,10 @@
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>Issue Initiation Guide</h3>
             • Question Title: please describe your issue in simplified language, no more than 25 words. <br>
-            • Problem supplement: supplement your problem content in detail, make sure the problem description is clear and intuitive, and provide some relevant information. <br>
-            • Select Tags: select a live tag with multiple appropriate tags separated by commas, with each tag no more than 10 words. <br>
+            • Problem supplement: supplement your problem content in detail, make sure the problem description is clear
+            and intuitive, and provide some relevant information. <br>
+            • Select Tags: select a live tag with multiple appropriate tags separated by commas, with each tag no more
+            than 10 words. <br>
         </div>
 
     </div>
