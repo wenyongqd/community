@@ -1,9 +1,11 @@
 package life.majiang.community.community.controller;
 
+import life.majiang.community.community.cache.Tagcache;
 import life.majiang.community.community.dto.QuestionDTO;
 import life.majiang.community.community.model.Question;
 import life.majiang.community.community.model.User;
 import life.majiang.community.community.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +31,15 @@ public class PublishController {
         model.addAttribute("description", question.getDescription());
         model.addAttribute("tag", question.getTag());
         model.addAttribute("id", question.getId());
+
+        model.addAttribute("tags", Tagcache.get());
         return "publish";
     }
 
     @GetMapping("/publish")
-    public String publish() {
+    public String publish(
+            Model model) {
+        model.addAttribute("tags", Tagcache.get());
      return "publish";
     }
 
@@ -50,6 +56,7 @@ public class PublishController {
         model.addAttribute("title",title);
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
+        model.addAttribute("tags", Tagcache.get());
 
         if(title == null || title == ""){
             model.addAttribute("error", "please add title");
@@ -61,6 +68,12 @@ public class PublishController {
         }
         if(tag == null || tag == ""){
             model.addAttribute("error", "please add tag");
+            return "publish";
+        }
+
+        String invalid = Tagcache.filterInvalid(tag);
+        if (StringUtils.isNoneBlank(invalid)) {
+            model.addAttribute("error","input tag is wrong" + invalid);
             return "publish";
         }
 
