@@ -73,7 +73,7 @@ public class PublishController {
 
         String invalid = Tagcache.filterInvalid(tag);
         if (StringUtils.isNoneBlank(invalid)) {
-            model.addAttribute("error","input tag is wrong" + invalid);
+            model.addAttribute("error","input tag is wrong with '" + invalid + "'");
             return "publish";
         }
 

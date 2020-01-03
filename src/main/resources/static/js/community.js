@@ -15,8 +15,8 @@ function comment2target(targetId, type, content) {
         contentType: "application/json",
         data: JSON.stringify({
             "parentId": targetId,
-            "content": content,
-            "type": type
+            "type": type,
+            "content": content
         }),
         success: function (response) {
             if (response.code == 200) {
