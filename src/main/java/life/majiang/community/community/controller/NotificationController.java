@@ -19,7 +19,7 @@ public class NotificationController {
     private NotificationService notificationService;
 
     @GetMapping("/notification/{id}")
-    public String progile(HttpServletRequest request,
+    public String profile(HttpServletRequest request,
             @PathVariable(name = "id") Long id) {
 
         User user = (User) request.getSession().getAttribute("user");
@@ -37,7 +37,5 @@ public class NotificationController {
         }else {
             return "redirect:/";
         }
-
-
     }
 }
