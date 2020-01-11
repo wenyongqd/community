@@ -57,7 +57,8 @@ public class CommentService {
             if(dbcomment == null) {
                 throw new CustomizerException((CustomizeErrorCode.COMMENT_NOT_FOUND));
             }
-            Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
+
+            Question question = questionMapper.selectByPrimaryKey(dbcomment.getParentId());
             if(question == null) {
                 throw new CustomizerException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
@@ -68,6 +69,8 @@ public class CommentService {
             parentComment.setId(comment.getParentId());
             parentComment.setCommentCount(1);
             commentExtMapper.incCommentCount(parentComment);
+
+
 
 
             createNotify(comment, dbcomment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT);
