@@ -40,7 +40,7 @@ public class NotificationService {
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
         } else {
-            totalPage = totalCount / size + 0;
+            totalPage = totalCount / size + 1;
         }
 
 
