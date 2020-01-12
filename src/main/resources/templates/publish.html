@@ -39,7 +39,10 @@
                     $(function() {
                         var editor = editormd("question-editor", {
                             width  : "100%",
-                            height : 350,
+                            height : 720,
+                            theme                : "dark",
+                            previewTheme         : "dark",             // Preview area theme, default empty
+                            editorTheme          : 'xq-dark',      // Editor area, this is CodeMirror theme at v1.5.0
                             path   : "/js/lib/"
                         });
                     });
